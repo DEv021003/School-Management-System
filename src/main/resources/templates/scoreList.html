@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Score List</title>
+    <link rel="stylesheet" type="text/css" href="/css/scoreList.css">
+</head>
+<body>
+<h1>Score List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Score 1</th>
+        <th>Score 2</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="score : ${scores}">
+        <td th:text="${score.id}"></td>
+        <td th:text="${score.student.fullName}"></td>
+        <td th:text="${score.subject.subjectName}"></td>
+        <td th:text="${score.score1}"></td>
+        <td th:text="${score.score2}"></td>
+        <td th:text="${score.grade}"></td> <!-- Hiển thị grade -->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
